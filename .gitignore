@@ -41,7 +41,3 @@ build
 ant.properties
 build.xml
 META-INF
-
-*.iml
-
-*.iml
