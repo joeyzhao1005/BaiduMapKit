@@ -32,7 +32,7 @@ proguard-project.txt
 
 # Gradle files
 .gradle
-gradle
+gradle/
 build
 
 # Mac system files
