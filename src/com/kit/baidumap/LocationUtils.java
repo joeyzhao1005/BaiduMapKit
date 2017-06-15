@@ -15,6 +15,7 @@ public class LocationUtils {
         }
 
         locationClient.registerLocationListener(bdLocationListener); // 注册监听函数
+
         // 定位初始化
         LocationClientOption option = new LocationClientOption();
         option.setLocationMode(LocationMode.Hight_Accuracy);// 设置定位模式
@@ -28,6 +29,9 @@ public class LocationUtils {
         locationClient.start();
 
         if (locationClient.isStarted()) {
+            locationClient.requestLocation();
+        } else {
+            locationClient.start();
             locationClient.requestLocation();
         }
 
