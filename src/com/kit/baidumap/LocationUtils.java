@@ -1,5 +1,8 @@
 package com.kit.baidumap;
 
+import android.content.Context;
+
+import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -7,14 +10,21 @@ import com.baidu.location.LocationClientOption.LocationMode;
 
 public class LocationUtils {
 
-    public static void startLocation(LocationClient locationClient
-            , String coorType, BDLocationListener bdLocationListener) {
+    public void stopLocation() {
+        if (locationClient == null) {
+            return;
+        }
+        locationClient.stop();
+    }
+
+
+    public void startLocation(String coorType, ZLocationListener locationListener) {
 
         if (locationClient == null) {
             return;
         }
 
-        locationClient.registerLocationListener(bdLocationListener); // 注册监听函数
+        locationClient.registerLocationListener(locationListener); // 注册监听函数
 
         // 定位初始化
         LocationClientOption option = new LocationClientOption();
@@ -36,6 +46,30 @@ public class LocationUtils {
         }
 
     }
+
+    public static LocationUtils getInstance() {
+        if (locationUtils == null)
+            locationUtils = new LocationUtils();
+
+
+        return locationUtils;
+    }
+
+    public LocationUtils init(Context context) {
+        if (locationUtils.locationClient == null) {
+            locationUtils.locationClient = new LocationClient(context.getApplicationContext());
+        }
+        return locationUtils;
+    }
+
+
+    public LocationClient getLocationClient() {
+        return locationClient;
+    }
+
+    private static LocationUtils locationUtils;
+    LocationClient locationClient;
+
 
     // How to use?
 
