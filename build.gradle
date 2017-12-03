@@ -1,11 +1,12 @@
 apply plugin: 'com.android.library'
 
 dependencies {
-    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: '../libs_baidu')
 }
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion "26.0.2"
 
     defaultConfig {
