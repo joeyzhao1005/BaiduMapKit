@@ -43,7 +43,7 @@
 //
 //    public void locate(final DoSomeThing doSomeThing) {
 //        ZogUtils.i("location start");
-//        Context context = ResWrapper.getInstance().getContext();
+//        Context context = ResWrapper.getInstance().getApplicationContext();
 //
 //
 //        ZLocationListener bdLocationListener = new ZLocationListener() {
@@ -103,7 +103,7 @@
 ////            this.locator = locator;
 ////
 ////            ZogUtils.i("location start");
-////            Context context = ResWrapper.getInstance().getContext();
+////            Context context = ResWrapper.getInstance().getApplicationContext();
 ////
 ////            final LocationClient lc = new LocationClient(
 ////                    context.getApplicationContext());
