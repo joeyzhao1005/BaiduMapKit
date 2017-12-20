@@ -11,7 +11,7 @@
 //import com.kit.baidumap.ZLocationListener;
 //import com.kit.baidumap.model.enums.CoorType;
 //import com.kit.utils.ResWrapper;
-//import com.kit.utils.log.ZogUtils;
+//import com.kit.utils.log.Zog;
 //import com.zhao.withu.core.tools.EventBusTools;
 //
 //import org.greenrobot.eventbus.Subscribe;
@@ -42,7 +42,7 @@
 //
 //
 //    public void locate(final DoSomeThing doSomeThing) {
-//        ZogUtils.i("location start");
+//        Zog.i("location start");
 //        Context context = ResWrapper.getInstance().getApplicationContext();
 //
 //
@@ -50,9 +50,9 @@
 //            @Override
 //            public void onReceiveLocation(BDLocation location) {
 //                super.onReceiveLocation(location);
-//                ZogUtils.i("locate success");
+//                Zog.i("locate success");
 //                doSomeThing.execute(location);
-//                ZogUtils.i("locate success " + location.getCity());
+//                Zog.i("locate success " + location.getCity());
 //            }
 //
 //            @Override
@@ -102,7 +102,7 @@
 ////            this.type = type;
 ////            this.locator = locator;
 ////
-////            ZogUtils.i("location start");
+////            Zog.i("location start");
 ////            Context context = ResWrapper.getInstance().getApplicationContext();
 ////
 ////            final LocationClient lc = new LocationClient(
@@ -113,7 +113,7 @@
 ////                    lc.stop();
 ////
 ////                    onLocationRecevied(bdLocation);
-////                    ZogUtils.i("locate success " + bdLocation.getCity());
+////                    Zog.i("locate success " + bdLocation.getCity());
 ////                }
 ////            };
 ////
@@ -124,7 +124,7 @@
 //
 //    @Subscribe(threadMode = ThreadMode.MAIN)
 //    public void onLocationRecevied(BDLocation bdLocation) {
-//        ZogUtils.i("onLocationRecevied locator" + locator);
+//        Zog.i("onLocationRecevied locator" + locator);
 //        if (locator != null) {
 //            locator.onLocationRecevied(type, bdLocation);
 //        }
