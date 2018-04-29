@@ -48,8 +48,9 @@ public class LocationUtils {
     }
 
     public static LocationUtils getInstance() {
-        if (locationUtils == null)
+        if (locationUtils == null) {
             locationUtils = new LocationUtils();
+        }
 
 
         return locationUtils;

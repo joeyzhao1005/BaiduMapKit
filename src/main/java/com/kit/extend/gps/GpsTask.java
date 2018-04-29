@@ -30,8 +30,9 @@ public class GpsTask extends AsyncTask {
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			if(callBk == null)
-				return;
+			if(callBk == null) {
+                return;
+            }
 			switch (msg.what) {
 			case 0:
 				callBk.gpsConnected((GpsData)msg.obj);
@@ -129,8 +130,9 @@ public class GpsTask extends AsyncTask {
 	protected void onPostExecute(Object result) {
 		locationManager.removeUpdates(locationListener);
 		// ��ȡ��ʱ
-		if (TIME_OUT && callBk != null)
-			handler.sendEmptyMessage(1);
+		if (TIME_OUT && callBk != null) {
+            handler.sendEmptyMessage(1);
+        }
 		super.onPostExecute(result);
 	}
 
