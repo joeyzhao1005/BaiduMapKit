@@ -2,7 +2,6 @@ package com.kit.baidumap;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.ZoomButton;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
