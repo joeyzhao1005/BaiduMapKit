@@ -43,7 +43,7 @@
 //
 //    public void locate(final DoSomeThing doSomeThing) {
 //        Zog.i("location start");
-//        Context context = ResWrapper.getInstance().getApplicationContext();
+//        Context context = ResWrapper.getApplicationContext();
 //
 //
 //        ZLocationListener bdLocationListener = new ZLocationListener() {
@@ -77,7 +77,7 @@
 ////        understandResponse.setService(Service.MAP);
 ////        understandResponse.setOperation(MapManager.Operation.POSITION);
 ////
-//////        String answerStr = ResWrapper.getInstance().getString(R.string.locating);
+//////        String answerStr = ResWrapper.getString(R.string.locating);
 ////////        understandResponse.setText( answerStr;
 //////        understandResponse.setAnswer(AnswerManager.getInstance().creatAnswer(answerStr));
 ////
@@ -103,7 +103,7 @@
 ////            this.locator = locator;
 ////
 ////            Zog.i("location start");
-////            Context context = ResWrapper.getInstance().getApplicationContext();
+////            Context context = ResWrapper.getApplicationContext();
 ////
 ////            final LocationClient lc = new LocationClient(
 ////                    context.getApplicationContext());
