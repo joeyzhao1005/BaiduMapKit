@@ -1,7 +1,6 @@
 package com.kit.baidumap;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -22,10 +21,5 @@ public class BDDefaultLocationListener implements BDLocationListener {
         lc.stop();
         baiduLocation = location;
 
-    }
-
-    @Override
-    public void onConnectHotSpotMessage(String s, int i) {
-        Log.d("BDDefaultLL", "BDDefaultLocationListener s:" + s + " i:" + i);
     }
 }
