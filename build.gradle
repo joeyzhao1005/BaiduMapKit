@@ -30,6 +30,7 @@ android {
         prePublish {}
         release {}
     }
+
 }
 repositories {
     mavenCentral()
