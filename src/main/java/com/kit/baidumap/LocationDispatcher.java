@@ -29,25 +29,28 @@ public class LocationDispatcher {
     String type;
     ILocator locator;
 
+    private static volatile ZLocationListener bdLocationListener = null;
 
     public static void locate(final DoSomeThing doSomeThing) {
         Zog.i("location start");
         Context context = AppMaster.getInstance().getAppContext();
 
-
         ZLocationListener bdLocationListener = new ZLocationListener() {
             @Override
             public void onReceiveLocation(BDLocation location) {
                 super.onReceiveLocation(location);
+                LocationUtils.getInstance().getLocationClient().unRegisterLocationListener(this);
+
                 Zog.i("locate success");
-                doSomeThing.execute(location);
+                if (doSomeThing != null) {
+                    doSomeThing.execute(location);
+                }
                 Zog.i("locate success " + location.getAddrStr());
             }
 
             @Override
             public void onConnectHotSpotMessage(String s, int i) {
                 super.onConnectHotSpotMessage(s, i);
-
             }
         };
 
@@ -58,7 +61,7 @@ public class LocationDispatcher {
 
     }
 
-    public  void locate(final String type, ILocator locator) {
+    public void locate(final String type, ILocator locator) {
         this.type = type;
         this.locator = locator;
 
