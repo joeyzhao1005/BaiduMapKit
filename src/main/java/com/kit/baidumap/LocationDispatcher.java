@@ -29,7 +29,6 @@ public class LocationDispatcher {
     String type;
     ILocator locator;
 
-    private static volatile ZLocationListener bdLocationListener = null;
 
     public static void locate(final DoSomeThing doSomeThing) {
         Zog.i("location start");
