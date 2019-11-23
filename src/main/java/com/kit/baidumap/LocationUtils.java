@@ -24,16 +24,21 @@ public class LocationUtils {
             return;
         }
 
-        locationClient.registerLocationListener(locationListener); // 注册监听函数
+        // 注册监听函数
+        locationClient.registerLocationListener(locationListener);
 
         // 定位初始化
         LocationClientOption option = new LocationClientOption();
-        option.setLocationMode(LocationMode.Hight_Accuracy);// 设置定位模式
-        option.setCoorType(coorType);// 返回的定位结果是百度经纬度,默认值gcj02
+        // 设置定位模式
+        option.setLocationMode(LocationMode.Hight_Accuracy);
+        // 返回的定位结果是百度经纬度,默认值gcj02
+        option.setCoorType(coorType);
         // option.setScanSpan(HiBitConfig.baiduMapScanSpan);//
         // 设置发起定位请求的间隔时间为5000ms
-        option.setIsNeedAddress(true);// 返回的定位结果包含地址信息
-        option.setNeedDeviceDirect(true);// 返回的定位结果包含手机机头的方向
+        // 返回的定位结果包含地址信息
+        option.setIsNeedAddress(true);
+        // 返回的定位结果包含手机机头的方向
+        option.setNeedDeviceDirect(true);
         option.setOpenGps(true);
         locationClient.setLocOption(option);
         locationClient.start();

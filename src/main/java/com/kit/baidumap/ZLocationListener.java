@@ -1,10 +1,11 @@
 package com.kit.baidumap;
 
+import com.baidu.location.BDAbstractLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 
-public class ZLocationListener implements BDLocationListener {
+public class ZLocationListener extends BDAbstractLocationListener {
 
 
     @Override

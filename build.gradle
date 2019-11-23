@@ -5,6 +5,9 @@ dependencies {
     //    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation fileTree(include: ['*.jar'], dir: '../libs_baidu')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation project(':ZUtils')
+
 }
 
 android {
