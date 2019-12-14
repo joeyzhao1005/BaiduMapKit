@@ -39,12 +39,14 @@ public class LocationDispatcher {
             public void onReceiveLocation(BDLocation location) {
                 super.onReceiveLocation(location);
                 LocationUtils.getInstance().getLocationClient().unRegisterLocationListener(this);
+                LocationUtils.getInstance().getLocationClient().stop();
 
-                Zog.i("locate success");
                 if (doSomeThing != null) {
                     doSomeThing.execute(location);
                 }
-                Zog.i("locate success " + location.getAddrStr());
+                if (location != null) {
+                    Zog.i("locate success " + location.getAddrStr());
+                }
             }
 
             @Override
