@@ -32,7 +32,7 @@ public class LocationDispatcher {
 
     public static void locate(final DoSomeThing doSomeThing) {
         Zog.i("location start");
-        Context context = AppMaster.getInstance().getAppContext();
+        Context context = AppMaster.INSTANCE.getAppContext();
 
         ZLocationListener bdLocationListener = new ZLocationListener() {
             @Override
